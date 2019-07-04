@@ -1,0 +1,220 @@
+body {
+  color: #40514E;
+  margin: 0;
+  text-align: center;
+  background-color: #63aabc;
+  margin-bottom: 100px;
+}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.hr_index {
+  border: solid #cb9b42 2px;
+  border-bottom: none;
+  width: 50%;
+
+}
+
+.my-btn{
+  background-color: #32ff6a;
+}
+
+.my-btn:hover{
+  background-color: #27aa80;
+
+}
+
+.src{
+  background-color: #32ff6a;
+  margin-top: 50px;
+}
+
+.src:hover{
+  background-color: #27aa80;
+}
+/* CSS for Welcome Page  */
+#nav{
+  background-color: #216583;
+}
+
+#nav .nav-link {
+  font-size: 1.4rem;
+}
+
+.Logo{
+  width: 4%;
+}
+
+.Logo2{
+  width: 25%;
+}
+
+.intro{
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /* background-color: #f79c1d; */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.drop-down{
+  background-color: #d65a31;
+  margin-bottom: 10px;
+}
+
+/* CSS for List of Restaurants */
+
+.box1{
+  margin: 20px auto 20px auto;
+  background-color: #216583;
+  /* border: solid;
+  border-color: #66BFBF; */
+}
+
+.box2{
+  margin: 20px auto 20px auto;
+  background-color: #216583;
+  /* border: solid;
+  border-color: #66BFBF; */
+}
+
+.type{
+  background: #32ff6a;
+  display: inline-block;
+  border: solid;
+  padding: 3px 3px 3px 3px;
+}
+
+.res1{
+  width: 50%;
+  margin: 25px 25px 25px 25px;
+}
+
+.resDesc{
+  padding-bottom: 5px;
+}
+
+.box1:hover{
+  border-color: #ff6337;
+  background-color: #2d248a;
+
+}
+
+.resLink{
+  text-decoration: none;
+  color: #40514E;
+}
+
+.resLink:hover{
+  text-decoration: none;
+  color: #212121;
+}
+
+/* CSS for Order Page */
+
+.order{
+  background-color: #216583;
+  margin: 5% 16% 5% 16%;
+  border: solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+}
+
+.order_row{
+  display: none;
+}
+
+/* CSS for Checkout Page */
+
+.checkout{
+  background-color: #216583;
+  margin: 5% 12% 5% 12%;
+  border: solid;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.check-form{
+  margin: 6px auto 6px auto;
+  width: 50%;
+}
+
+/* CSS for Menu Page */
+
+.intro_menu{
+  padding-top: 15px;
+}
+
+.foodpic{
+  width: 300px;
+  height: 175px;
+  margin: 35px auto 15px auto;
+}
+
+.foodDesc{
+  margin: 10px auto 14px auto;
+}
+
+.menu_hid{
+  display: none;;
+}
+
+.itemAddedPanel{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  border: solid;
+  border-color: #a34a28;
+  background-color: #58b368;
+}
+
+.itemRemovedPanel{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 8px;
+  border: solid;
+  border-color: #a34a28;
+  background-color: #c72c41;
+}
+
+.itemText{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: Black;
+  margin: 3px 3px 3px 3px;
+}
