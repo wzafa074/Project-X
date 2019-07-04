@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Menu</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light">
+    <img class="Logo" src="images/Logo.png" alt="Logo">
+    <h3>Title</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="List of Restaurants.html">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Menu Page.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Order Page.html">Order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Checkout Page.html">Checkout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="intro_menu">
+    <h1>Menu</h1>
+    <h2> Hot and Fresh Food</h2>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <div id="Beef Burger" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/mc_burger.jpg" alt="pizza">
+          <h2 class="foodDesc">Beef Burger</h2>
+          <p class="type">$10/Burger</p><br>
+          <button onclick="addToCart('Beef Burger')" type="button" class="btn btn-success">+</button>
+          <p id="quantity1" class="type">0</p>
+          <button onclick="removeFromCart('Beef Burger')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Fries" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/mc_fries.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Fries</h2>
+          <p class="type">$5/Fries</p> <br>
+          <button onclick="addToCart('Fries')" type="button" class="btn btn-success">+</button>
+          <p id="quantity2" class="type">0</p>
+          <button onclick="removeFromCart('Fries')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Smoothie" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/mc_smoothie.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Smoothie</h2>
+          <p class="type">$4/Smoothie</p><br>
+          <button onclick="addToCart('Smoothie')" type="button" class="btn btn-success">+</button>
+          <p id="quantity3" class="type">0</p>
+          <button onclick="removeFromCart('Smoothie')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Teriyaki Sub" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/sub_sub.jpg" alt="pizza">
+          <h2 class="foodDesc">Teriyaki Sub</h2>
+          <p class="type">$10/Footlong</p><br>
+          <button onclick="addToCart('Teriyaki Sub')" type="button" class="btn btn-success">+</button>
+          <p id="quantity4" class="type">0</p>
+          <button onclick="removeFromCart('Teriyaki Sub')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Soda" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/sub_drink.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Soda</h2>
+          <p class="type">$3/Soda</p> <br>
+          <button onclick="addToCart('Soda')" type="button" class="btn btn-success">+</button>
+          <p id="quantity5" class="type">0</p>
+          <button onclick="removeFromCart('Soda')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Cookie" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/sub_cookie.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Cookie</h2>
+          <p class="type">$2/Cookie</p><br>
+          <button onclick="addToCart('Cookie')" type="button" class="btn btn-success">+</button>
+          <p id="quantity6" class="type">0</p>
+          <button onclick="removeFromCart('Cookie')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Sandwich" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/tims_breakfast.png" alt="pizza">
+          <h2 class="foodDesc">Sandwich</h2>
+          <p class="type">$6/Sandwich</p><br>
+          <button onclick="addToCart('Sandwich')" type="button" class="btn btn-success">+</button>
+          <p id="quantity7" class="type">0</p>
+          <button onclick="removeFromCart('Sandwich')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Muffin" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+          <img class="foodpic" src="images/tims_muffin.jpg" alt="pizza" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Muffin</h2>
+          <p class="type">$3/Muffin</p> <br>
+          <button onclick="addToCart('Muffin')" type="button" class="btn btn-success">+</button>
+          <p id="quantity8" class="type">0</p>
+          <button onclick="removeFromCart('Muffin')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Coffee" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/tims_coffee.png" alt="coffee" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Coffee</h2>
+          <p class="type">$2/Coffee</p><br>
+          <button onclick="addToCart('Coffee')" type="button" class="btn btn-success">+</button>
+          <p id="quantity9" class="type">0</p>
+          <button onclick="removeFromCart('Coffee')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Cannoli" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/cannoli.jpg" alt="coffee" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Cannoli</h2>
+          <p class="type">$4/Plate</p><br>
+          <button onclick="addToCart('Cannoli')" type="button" class="btn btn-success">+</button>
+          <p id="quantity10" class="type">0</p>
+          <button onclick="removeFromCart('Cannoli')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Carbo" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/Carbo.png" alt="coffee" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Carbo</h2>
+          <p class="type">$7/Plate</p><br>
+          <button onclick="addToCart('Carbo')" type="button" class="btn btn-success">+</button>
+          <p id="quantity11" class="type">0</p>
+          <button onclick="removeFromCart('Carbo')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Meatballs" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/meatballs.jpg" alt="coffee" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Meatballs</h2>
+          <p class="type">$13/plate</p><br>
+          <button onclick="addToCart('Meatballs')" type="button" class="btn btn-success">+</button>
+          <p id="quantity12" class="type">0</p>
+          <button onclick="removeFromCart('Meatballs')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Panini" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/panini.jpg" alt="coffee" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Panini</h2>
+          <p class="type">$7/panini</p><br>
+          <button onclick="addToCart('Panini')" type="button" class="btn btn-success">+</button>
+          <p id="quantity13" class="type">0</p>
+          <button onclick="removeFromCart('Panini')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Pizza" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/pizza.jpg" alt="coffee" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Pizza</h2>
+          <p class="type">$12/Box</p><br>
+          <button onclick="addToCart('Pizza')" type="button" class="btn btn-success">+</button>
+          <p id="quantity14" class="type">0</p>
+          <button onclick="removeFromCart('Pizza')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Garlic Bread" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/GarlicBread.jpg" alt="coffee" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Garlic Bread</h2>
+          <p class="type">$5/basket</p><br>
+          <button onclick="addToCart('Garlic Bread')" type="button" class="btn btn-success">+</button>
+          <p id="quantity15" class="type">0</p>
+          <button onclick="removeFromCart('Garlic Bread')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+      <div id="Water" style="display:none;" class="col-lg-4 col-md-6">
+        <div class="box2">
+
+          <img class="foodpic" src="images/water.jpg" alt="coffee" style="width:300px;height:175px;">
+          <h2 class="foodDesc">Water</h2>
+          <p class="type">$2/Water</p><br>
+          <button onclick="addToCart('Water')" type="button" class="btn btn-success">+</button>
+          <p id="quantity16" class="type">0</p>
+          <button onclick="removeFromCart('Water')" type="button" class="btn btn-danger">-</button>
+
+        </div>
+      </div>
+
+
+
+    </div>
+    <div id="alert" style="display: none;" class="itemAddedPanel">
+      <p id="alertMessage" class="itemText"></p>
+    </div>
+
+    <div id="alertRemove" style="display: none;" class="itemRemovedPanel">
+      <p id="alertMessageRemoval" class="itemText"></p>
+    </div>
+
+    <a href="Order Page.html"><button type="button" class="btn btn-dark my-btn">View Order</button></a>
+  </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+  //localStorage.setItem("selectedRestaurant","McDonalds");
+  initializeMenu();
+
+  function initializeMenu() {
+    var restaurant = localStorage.getItem("selectedRestaurant");
+
+    if (restaurant == null || restaurant == "") {
+      displayAlert("No restaurant chosen");
+    }
+
+    if (restaurant == "McDonalds") {
+      enableMenuItem("Beef Burger");
+      enableMenuItem("Fries");
+      // initializeCartDropdown("Beef Burger", "Fries", "Smoothie");
+    } else if (restaurant == "Tim Hortons") {
+      enableMenuItem("Smoothie");
+      enableMenuItem("Teriyaki Sub");
+      // initializeCartDropdown("Sandwich", "Muffin", "Coffee" );
+    } else if (restaurant == "Subway") {
+      enableMenuItem("Soda");
+      enableMenuItem("Cookie");
+      // initializeCartDropdown("Sandwich", "Muffin", "Coffee" );
+    }else if (restaurant == "Sushi") {
+      enableMenuItem("Sandwich");
+      enableMenuItem("Muffin");
+      // initializeCartDropdown("Sandwich", "Muffin", "Coffee" );
+    }else if (restaurant == "Red Lobster") {
+      enableMenuItem("Coffee");
+      enableMenuItem("Cannoli");
+      // initializeCartDropdown("Sandwich", "Muffin", "Coffee" );
+    }else if (restaurant == "Shawarma") {
+      enableMenuItem("Carbo");
+      enableMenuItem("Meatballs");
+      // initializeCartDropdown("Sandwich", "Muffin", "Coffee" );
+    }else if (restaurant == "Wendys") {
+      enableMenuItem("Panini");
+      enableMenuItem("Pizza");
+      // initializeCartDropdown("Sandwich", "Muffin", "Coffee" );
+    }else if (restaurant == "Dairy Queen") {
+      enableMenuItem("Garlic Bread");
+      enableMenuItem("Water");
+      // initializeCartDropdown("Teriyaki Sub", "Soda", "Cookie");
+    }
+  }
+
+  function enableMenuItem(menuItem) {
+    document.getElementById(menuItem).style.display = "block";
+  }
+
+  checkQuantity();
+
+  function checkQuantity() {
+
+    for (var i = 0; i < localStorage.length; i++) {
+      if (localStorage.key(i) == "Beef Burger") {
+        document.getElementById("quantity1").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Fries") {
+        document.getElementById("quantity2").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Smoothie") {
+        document.getElementById("quantity3").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Teriyaki Sub") {
+        document.getElementById("quantity4").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Soda") {
+        document.getElementById("quantity5").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Cookie") {
+        document.getElementById("quantity6").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Sandwich") {
+        document.getElementById("quantity7").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Muffin") {
+        document.getElementById("quantity8").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Coffee") {
+        document.getElementById("quantity9").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Cannoli") {
+        document.getElementById("quantity10").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Carbo") {
+        document.getElementById("quantity11").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Meatballs") {
+        document.getElementById("quantity12").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Panini") {
+        document.getElementById("quantity13").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Pizza") {
+        document.getElementById("quantity14").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Garlic Bread") {
+        document.getElementById("quantity15").innerHTML = localStorage.getItem(localStorage.key(i));
+      } else if (localStorage.key(i) == "Water") {
+        document.getElementById("quantity16").innerHTML = localStorage.getItem(localStorage.key(i));
+      }
+    }
+  }
+
+  function addToCart(menuItem) {
+    addToLocalStorage(menuItem, 1);
+    displayAlert(menuItem + " added to cart");
+  }
+
+  function addToLocalStorage(menuItem, quantity) {
+
+    var localStorageObject = localStorage.getItem(menuItem);
+
+    if (localStorageObject == null) {
+      localStorage.setItem(menuItem, quantity);
+      checkQuantity();
+
+    } else {
+      localStorageObject = Number(localStorageObject) + quantity;
+      localStorage.setItem(menuItem, localStorageObject);
+      checkQuantity();
+      // document.getElementById(menuItem).innerHTML=menuItem + " ... x" + localStorageObject;
+    }
+  }
+
+  function removeFromCart(menuItem) {
+
+    var count = localStorage.getItem(menuItem);
+
+    if (count == null || Number(count) == 0) {
+      // alert("This item cannot be deleted as it has not been added to the cart");
+    } else {
+      count = Number(count) - 1;
+      localStorage.setItem(menuItem, count);
+      displayAlertRemoval(menuItem + " removed from cart");
+      checkQuantity();
+    }
+
+  }
+
+  function displayAlert(alertMessage) {
+    document.getElementById("alertMessage").innerHTML = alertMessage;
+    document.getElementById("alert").style.display = "block";
+    setTimeout(function() {
+      document.getElementById("alert").style.display = "none";
+      document.getElementById("alertMessage").innerHTML = "";
+    }, 2000);
+  }
+
+  function displayAlertRemoval(alertMessage) {
+    document.getElementById("alertMessageRemoval").innerHTML = alertMessage;
+    document.getElementById("alertRemove").style.display = "block";
+    setTimeout(function() {
+      document.getElementById("alertRemove").style.display = "none";
+      document.getElementById("alertMessageRemoval").innerHTML = "";
+    }, 2000);
+  }
+</script>

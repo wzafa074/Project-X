@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Restaurants</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light">
+    <img class="Logo" src="images/Logo.png" alt="Logo">
+    <h3>Title</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="List of Restaurants.html">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Menu Page.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Order Page.html">Order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Checkout Page.html">Checkout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 ottawa-lunch">
+        <a onclick="setRestaurant('McDonalds')" class="resLink" href="Menu Page.html">
+          <div class="box1">
+            <img class="res1" src="images/mcdonalds.png" alt="mcdonald's pic">
+            <h2 class="resDesc">McDonalds</h2>
+            <p class="type">$10-$25</p>
+            <p class="type">123 Laurier Ave</p>
+            <p class="type">Fast Food</p>
+            <p class="type">Mon-Fri 9-10 PM</p>
+            <p class="type">⭐⭐⭐⭐</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 ottawa-lunch">
+        <a onclick="setRestaurant('Tim Hortons')" class="resLink" href="Menu Page.html">
+          <div class="box1">
+            <img class="res1" src="images/tims.png" alt="tims' pic">
+            <h2 class="resDesc">Tim Hortons</h2>
+            <p class="type">$15-$25</p>
+            <p class="type">123 Laurier Ave</p>
+            <p class="type">Fast Food</p>
+            <p class="type">Mon-Fri 9-10 PM</p>
+            <p class="type">⭐⭐⭐⭐⭐</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 ottawa-dinner">
+        <a onclick="setRestaurant('Subway')" class="resLink" href="Menu Page.html">
+          <div class="box1">
+            <img class="res1" src="images/sub.jpg" alt="subway pic">
+            <h2 class="resDesc">Subway</h2>
+            <p class="type">$15-$35</p>
+            <p class="type">123 Laurier Ave</p>
+            <p class="type">Fast Food</p>
+            <p class="type">Mon-Fri 9-10 PM</p>
+            <p class="type">⭐⭐⭐⭐</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 ottawa-dinner">
+        <a onclick="setRestaurant('Sushi')" class="resLink" href="Menu Page.html">
+          <div class="box1">
+            <img class="res1" src="images/sushi.jpg" alt="subway pic">
+            <h2 class="resDesc">Sushi</h2>
+            <p class="type">$15-$35</p>
+            <p class="type">123 Laurier Ave</p>
+            <p class="type">Fast Food</p>
+            <p class="type">Mon-Fri 9-10 PM</p>
+            <p class="type">⭐⭐⭐⭐</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 toronto-dinner">
+        <a onclick="setRestaurant('Red Lobster')" class="resLink" href="Menu Page.html">
+          <div class="box1">
+            <img class="res1" src="images/red-lobster.jpg" alt="subway pic">
+            <h2 class="resDesc">Red Lobster</h2>
+            <p class="type">$15-$35</p>
+            <p class="type">123 Laurier Ave</p>
+            <p class="type">Fast Food</p>
+            <p class="type">Mon-Fri 9-10 PM</p>
+            <p class="type">⭐⭐⭐⭐</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 toronto-dinner">
+        <a onclick="setRestaurant('Shawarma')" class="resLink" href="Menu Page.html">
+          <div class="box1">
+            <img class="res1" src="images/shawarma.jpg" alt="subway pic">
+            <h2 class="resDesc">Shawarma</h2>
+            <p class="type">$15-$35</p>
+            <p class="type">123 Laurier Ave</p>
+            <p class="type">Fast Food</p>
+            <p class="type">Mon-Fri 9-10 PM</p>
+            <p class="type">⭐⭐⭐⭐</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 toronto-lunch">
+        <a onclick="setRestaurant('Wendys')" class="resLink" href="Menu Page.html">
+          <div class="box1">
+            <img class="res1" src="images/wendys.jpg" alt="subway pic">
+            <h2 class="resDesc">Wendys</h2>
+            <p class="type">$15-$35</p>
+            <p class="type">123 Laurier Ave</p>
+            <p class="type">Fast Food</p>
+            <p class="type">Mon-Fri 9-10 PM</p>
+            <p class="type">⭐⭐⭐⭐</p>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 toronto-lunch">
+        <a onclick="setRestaurant('Dairy Queen')" class="resLink" href="Menu Page.html">
+          <div class="box1">
+            <img class="res1" src="images/dq.jpg" alt="subway pic">
+            <h2 class="resDesc">Dairy Queen</h2>
+            <p class="type">$15-$35</p>
+            <p class="type">123 Laurier Ave</p>
+            <p class="type">Fast Food</p>
+            <p class="type">Mon-Fri 9-10 PM</p>
+            <p class="type">⭐⭐⭐⭐</p>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+  function setRestaurant(restaurant) {
+    localStorage.setItem('selectedRestaurant', restaurant);
+    window.location.href = "Menu Page.html";
+  }
+
+  function hide(a,b,c){
+  $(a).css('display','none');
+  $(b).css('display','none');
+  $(c).css('display','none');
+}
+
+//Conditionaly hiding restaurant panels that don't have the selected city and type of meal
+(localStorage.getItem('city')=='Ottawa' && localStorage.getItem('mealType')=='Dinner') ? hide('.ottawa-lunch','.toronto-dinner','.toronto-lunch') :"";
+(localStorage.getItem('city')=='Ottawa' && localStorage.getItem('mealType')=='Lunch') ? hide('.ottawa-dinner','.toronto-dinner','.toronto-lunch') :"";
+(localStorage.getItem('city')=='Toronto' && localStorage.getItem('mealType')=='Dinner') ? hide('.ottawa-dinner','.ottawa-lunch','.toronto-lunch') :"";
+(localStorage.getItem('city')=='Toronto' && localStorage.getItem('mealType')=='Lunch') ? hide('.ottawa-dinner','.ottawa-lunch','.toronto-dinner') :"";
+
+</script>

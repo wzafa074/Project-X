@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light">
+    <img class="Logo" src="images/Logo.png" alt="Logo">
+    <h3>Title</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="List of Restaurants.html">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Menu Page.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Order Page.html">Order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Checkout Page.html">Checkout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="checkout">
+      <h1>Checkout</h1>
+      <p id="totalBeforeTax"></p>
+      <p id="tax"></p>
+      <p id="totalAfterTax"></p>
+      <form>
+        <input onclick="cardPayment();" type="radio" name="card" value="Debit" checked> Debit
+        <input onclick="cardPayment();" type="radio" name="card" value="Credit"> Credit
+        <input onclick="cashPayment();" type="radio" name="card" value="Cash"> Cash
+      </form>
+      <form>
+        <input id="fullName" class="check-form" type="text" name="fullName" placeholder="Full Name"> <br>
+        <input id="addressLine1" class="check-form" type="text" name="addressLine1" placeholder="Address Line 1"> <br>
+        <input id="addressLine2" class="check-form" type="text" name="addressLine2" placeholder="Address Line 2 (Optional)"> <br>
+        <input id="addressPostalCode" class="check-form" type="text" name="postalCode" placeholder="Postal Code"> <br>
+        <input id="addressCity" class="check-form" type="text" name="city" placeholder="City"> <br>
+        <input id="addressProvince" class="check-form" type="text" name="province" placeholder="Province"> <br>
+        <input id="cardNumber" class="check-form" type="text" name="cardNumber" placeholder="Card Number" maxlength="19"> <br>
+        <input id="cardCVV" class="check-form" type="text" name="cardCVV" placeholder="CVV" maxlength="3"> <br>
+        <input id="cardExpirationDate" class="check-form" type="text" name="cardExpirationDate" placeholder="Card Expiration Date">
+      </form>
+      <button onclick="placeOrder();" type="button" class="btn btn-success">Place Order</button>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+var cashPaymentMethod=false;
+initializeCheckout();
+
+function initializeCheckout() {
+var totalBeforeTax = Number(localStorage.getItem("totalBeforeTax"));
+var tax=Math.round((totalBeforeTax*0.13) * 100) / 100;
+var totalAfterTax=totalBeforeTax+tax;
+
+if (totalBeforeTax!=null) {
+  document.getElementById("totalBeforeTax").innerHTML="Total Before Tax: <b>$" + totalBeforeTax + "</b>";
+  document.getElementById("tax").innerHTML="Tax: <b>$" + tax + "</b>";
+  document.getElementById("totalAfterTax").innerHTML="Total After Tax: <b>$" + totalAfterTax + "</b>";
+} else {
+  document.getElementById("totalBeforeTax").innerHTML="Total Before Tax: <b>$0</b>";
+  document.getElementById("tax").innerHTML="Tax: <b>$</b>";
+  document.getElementById("totalAfterTax").innerHTML="Total After Tax: <b>$0</b>";
+}
+}
+
+function cashPayment() {
+document.getElementById("cardNumber").style.display="none";
+document.getElementById("cardCVV").style.display="none";
+document.getElementById("cardExpirationDate").style.display="none";
+cashPaymentMethod=true;
+}
+
+function cardPayment() {
+document.getElementById("cardNumber").style.display="block";
+document.getElementById("cardCVV").style.display="block";
+document.getElementById("cardExpirationDate").style.display="block";
+cashPaymentMethod=false;
+}
+
+function placeOrder() {
+var fullName=document.getElementById("fullName").value;
+var addressLine1=document.getElementById("addressLine1").value;
+var addressLine2=document.getElementById("addressLine2").value;
+var addressCity=document.getElementById("addressCity").value;
+var addressProvince=document.getElementById("addressProvince").value;
+var addressPostalCode=document.getElementById("addressPostalCode").value;
+var cardNumber=document.getElementById("cardNumber").value;
+var cardCVV=document.getElementById("cardCVV").value;
+var cardExpirationDate=document.getElementById("cardExpirationDate").value;
+
+if (cashPaymentMethod) {
+  if (fullName=="" || addressLine1=="" || addressLine2=="" || addressCity=="" || addressProvince=="" || addressPostalCode=="") {
+    // alert("Please make sure all the required information is filled.");
+     return;
+  } else {
+    // alert("Thank you, your order has been received! \n" + "Full Name: " + fullName + ", Address Line 1: " + addressLine1 + ", address Line 2: " + addressLine2 + ", City: " + addressCity + ", Province: " + addressProvince + ", Postal Code: " + addressPostalCode );
+  }
+} else if (!cashPaymentMethod) {
+    if (fullName=="" || addressLine1=="" || addressLine2=="" || addressCity=="" || addressProvince=="" || addressPostalCode=="" || cardNumber=="" || cardCVV=="" || cardExpirationDate=="") {
+      // alert("Please make sure all the required information is filled.");
+      return;
+    } else {
+      // alert("Thank you, your order has been received! \n" + "Full Name: " + fullName + ", Address Line 1: " + addressLine1 + ", address Line 2: " + addressLine2 + ", City: " + addressCity + ", Province: " + addressProvince + ", Postal Code: " + addressPostalCode + ", Card Number: " + cardNumber + ", CVV: " + cardCVV + ", Card Expiration Date: " + cardExpirationDate);
+    }
+}
+
+document.getElementById("totalBeforeTax").innerHTML="Total Before Tax: <b>$" + "0" + "</b>";
+document.getElementById("tax").innerHTML="Tax: <b>$" + "0" + "</b>";
+document.getElementById("totalAfterTax").innerHTML="Total After Tax: <b>$" + "0" + "</b>";
+
+localStorage.clear();
+}
+
+
+</script>

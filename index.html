@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Welcome to Title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+  <nav id="nav" class="navbar navbar-expand-lg navbar-light">
+    <img class="Logo" src="images/Logo.png" alt="Logo">
+    <h3>Title</h3>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="List of Restaurants.html">Restaurants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Menu Page.html">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Order Page.html">Order</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Checkout Page.html">Checkout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+
+    <div class="intro">
+      <img class="Logo2" src="images/Logo.png" alt="Logo">
+      <h1>Title</h1>
+      <h2>Motto</h2>
+      <!-- <input class="search" type="text" placeholder="Search"> -->
+      <br>
+      <!-- <select class="drop-down">
+        <option value="" disabled selected>select type of meal</option>
+        <option value="Breakfast" disabled>Breakfast</option>
+        <option value="Lunch"> <a href="" onclick="setMeal('Lunch')"> Lunch </a></option>
+        <option value="Dinner"> <a href="" onclick="setMeal('Dinner')"> Dinner </a></option>
+      </select> -->
+
+      <div class="dropdown">
+        <button class="dropbtn src">Select Type of Meal</button>
+        <div class="dropdown-content select-mealType">
+          <a href="" onclick="setMeal('Lunch')"> Lunch </a>
+          <a href="" onclick="setMeal('Dinner')"> Dinner </a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button class="dropbtn select-city src">Select City</button>
+        <div class="dropdown-content">
+          <a href="" onclick="setCity('Ottawa')">Ottawa</a>
+          <a href="" onclick="setCity('Toronto')">Toronto</a>
+        </div>
+      </div>
+
+
+      <!-- <select class="drop-down">
+        <option value="" disabled selected>select city</option>
+        <option value="Ottawa" onclick="setCity('Ottawa')">Ottawa</option>
+        <option value="Toronto" onclick="setCity('Toronto')">Toronto</option>
+        <option value="Montreal" disabled>Montreal</option>
+        <option value="Vancouver" disabled>Vancouver</option>
+      </select> -->
+      <br>
+      <button onclick="searchBtn()" type="button" class="btn btn-dark my-btn src">Search Restaurants</button>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  function setMeal(meal) {
+    localStorage.setItem('mealType', meal);
+    console.log("meal type is set to" + meal);
+    // $(".select-mealType").prop('value',meal); // This line doesn't work as intended
+  }
+
+  function setCity(city) {
+    localStorage.setItem('city', city);
+    console.log("city is set to" + city);
+    // $(".select-city").prop('value',city); // This line doesn't work as intended
+  }
+
+  function searchBtn() {
+    if (localStorage.getItem('mealType') != (undefined || null) && localStorage.getItem('city') != (undefined || null)){
+    		window.location.href = "List of Restaurants.html";
+    }
+  }
+
+  /*   //Resetting values of accordion box when page loads
+    function reset(){
+      if ( localStorage.getItem('mealType')!=(undefined||null) && localStorage.getItem('city')!=(undefined||null) ){
+        localStorage.removeItem("mealType");
+        localStorage.removeItem("city");
+      }
+    }
+   */
+</script>
